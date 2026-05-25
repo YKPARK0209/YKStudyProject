@@ -1,0 +1,164 @@
+/* ── KoPub Batang (명조, serif) ──────────────── */
+@font-face {
+  font-family: 'KoPubBatang';
+  src: url('./fonts/KoPub Batang Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'KoPubBatang';
+  src: url('./fonts/KoPub Batang Medium.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'KoPubBatang';
+  src: url('./fonts/KoPub Batang Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── KoPub Dotum (고딕, sans-serif) ──────────── */
+@font-face {
+  font-family: 'KoPubDotum';
+  src: url('./fonts/KoPub Dotum Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'KoPubDotum';
+  src: url('./fonts/KoPub Dotum Medium.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'KoPubDotum';
+  src: url('./fonts/KoPub Dotum Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── KoPubWorld Batang (명조, serif) ─────────── */
+@font-face {
+  font-family: 'KoPubWorldBatang';
+  src: url('./fonts/KoPubWorld Batang Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'KoPubWorldBatang';
+  src: url('./fonts/KoPubWorld Batang Medium.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'KoPubWorldBatang';
+  src: url('./fonts/KoPubWorld Batang Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── KoPubWorld Dotum (고딕, sans-serif) ─────── */
+@font-face {
+  font-family: 'KoPubWorldDotum';
+  src: url('./fonts/KoPubWorld Dotum Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'KoPubWorldDotum';
+  src: url('./fonts/KoPubWorld Dotum Medium.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'KoPubWorldDotum';
+  src: url('./fonts/KoPubWorld Dotum Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── Moebius (디스플레이, Korean) ────────────── */
+@font-face {
+  font-family: 'Moebius';
+  src: url('./fonts/Moebius_Regular_kor.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Moebius';
+  src: url('./fonts/Moebius_Bold_kor.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── RixHead (헤드라인 디스플레이) ──────────── */
+@font-face {
+  font-family: 'RixHead';
+  src: url('./fonts/RixHeadB.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── RixVita (디스플레이) ────────────────────── */
+@font-face {
+  font-family: 'RixVita';
+  src: url('./fonts/RixVitaB.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── YoonGothic (고딕, 웨이트 4단계) ────────── */
+@font-face {
+  font-family: 'YoonGothic';
+  src: url('./fonts/윤고딕320.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'YoonGothic';
+  src: url('./fonts/윤고딕330.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'YoonGothic';
+  src: url('./fonts/윤고딕340.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'YoonGothic';
+  src: url('./fonts/윤고딕350.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── YoonMyeongjo (명조, serif) ──────────────── */
+@font-face {
+  font-family: 'YoonMyeongjo';
+  src: url('./fonts/윤명조 330.TTF') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

@@ -19,7 +19,8 @@ export default function Home() {
     <div className="home">
       <header className="home-hd">
         <h1 className="home-logo">
-          <span>Vibe</span><span className="home-logo-b">Deck</span>
+          <span>Park Young Keun</span>
+          <span className="home-logo-b">AI Study Archive</span>
         </h1>
         <p className="home-tagline">웹 기반 프레젠테이션 아카이브</p>
       </header>

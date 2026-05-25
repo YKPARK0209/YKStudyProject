@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ---
 
-## Project: Vibe-Deck
+## Project: Park Young Keun AI Study Archive
 
 웹 기술(HTML/CSS/JS + 프론트엔드 프레임워크)을 활용해 PPT 형식의 발표 자료를 제작하고 아카이빙하는 저장소.
 

@@ -252,7 +252,7 @@
 .s03-box {
   padding: 9px 16px;
   border-radius: 10px;
-  font-family: monospace; font-size: 1rem;
+  font-family: var(--font-mono); font-size: 1rem;
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.1);
   color: var(--color-text);
@@ -269,7 +269,7 @@
   letter-spacing: 0.1em; text-transform: uppercase;
   color: #a78bfa; margin-bottom: 3px;
 }
-.s03-rule-content { font-family: monospace; font-size: 1.2rem; color: var(--color-text); }
+.s03-rule-content { font-family: var(--font-mono); font-size: 1.2rem; color: var(--color-text); }
 .s03-arrow { font-size: 1.3rem; color: var(--color-muted); }
 
 .s03-sw-note {
@@ -310,7 +310,7 @@
 .s03-inf {
   padding: 10px 18px;
   border-radius: 10px;
-  font-family: monospace; font-size: 1.1rem;
+  font-family: var(--font-mono); font-size: 1.1rem;
 }
 .s03-inf--in  { background: rgba(0,212,255,0.08);  border: 1px solid rgba(0,212,255,0.2);  color: var(--color-accent); }
 .s03-inf--out {
@@ -365,7 +365,7 @@
 .s04-card-ex {
   margin-top: auto; padding: 8px 12px;
   background: rgba(0,0,0,0.35);
-  border-radius: 8px; font-family: monospace;
+  border-radius: 8px; font-family: var(--font-mono);
   font-size: 0.8rem; color: var(--color-warm);
   line-height: 1.5;
 }

@@ -1,12 +1,21 @@
+@import './fonts.css';
+
 :root {
-  --color-primary: #080c14;
+  /* Color palette */
+  --color-primary:   #080c14;
   --color-secondary: #0f1523;
-  --color-accent: #00d4ff;
-  --color-accent2: #7c3aed;
-  --color-warm: #f59e0b;
-  --color-text: #e2e8f0;
-  --color-muted: #64748b;
-  --font-base: 'Segoe UI', system-ui, sans-serif;
+  --color-accent:    #00d4ff;
+  --color-accent2:   #7c3aed;
+  --color-warm:      #f59e0b;
+  --color-text:      #e2e8f0;
+  --color-muted:     #64748b;
+
+  /* Font roles — 폰트 미지정 시 이 기본값 사용 (DESIGN.md 참조) */
+  --font-display  : 'RixHead', sans-serif;         /* 대제목, 히어로 텍스트 */
+  --font-heading  : 'YoonGothic', sans-serif;      /* 슬라이드 h1/h2 */
+  --font-base     : 'KoPubWorldDotum', sans-serif; /* 본문 기본 */
+  --font-serif    : 'KoPubWorldBatang', serif;     /* 인용, 강조 블록 */
+  --font-mono     : 'KoPubDotum', sans-serif;      /* 코드 블록 */
 }
 
 *, *::before, *::after {
