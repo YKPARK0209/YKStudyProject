@@ -1,17 +1,12 @@
 import { useNavigate } from 'react-router-dom'
 import './Home.css'
 
-const DECKS = [
-  {
-    id: 'ai-fundamentals',
-    title: 'AI 기초 이해',
-    subtitle: 'AI의 본질부터 LLM OS 비전까지',
-    count: 8,
-    tags: ['AI', 'LLM', '생성형AI'],
-    path: '/presentations/ai-fundamentals',
-    part: '1부·2부·3부',
-  },
-]
+// 각 presentations/<id>/meta.json 을 자동 수집 — 새 PPT 추가 시 Home.jsx 수정 불필요
+const metaModules = import.meta.glob('../presentations/*/meta.json', { eager: true })
+const DECKS = Object.entries(metaModules).map(([filePath, mod]) => {
+  const id = filePath.split('/').at(-2)
+  return { ...mod.default, id, path: `/presentations/${id}` }
+})
 
 export default function Home() {
   const navigate = useNavigate()

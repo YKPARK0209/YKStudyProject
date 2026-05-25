@@ -92,6 +92,7 @@ src/
 ├── styles/            # 전역 CSS, 테마 변수
 ├── presentations/
 │   └── <topic-name>/
+│       ├── meta.json  # 제목·슬라이드 수·태그 등 메타데이터 (Home 자동 수집)
 │       ├── Slide01.jsx
 │       ├── Slide02.jsx
 │       └── index.jsx  # 해당 PPT의 라우터/진입점
