@@ -1,0 +1,1 @@
+:root{--color-primary:#1a1a2e;--color-secondary:#16213e;--color-accent:#e94560;--font-base:"Segoe UI", system-ui, sans-serif;--slide-width:1280px;--slide-height:720px}*,:before,:after{box-sizing:border-box;margin:0;padding:0}html,body,#root{background:var(--color-primary);color:#fff;width:100%;height:100%;font-family:var(--font-base)}
