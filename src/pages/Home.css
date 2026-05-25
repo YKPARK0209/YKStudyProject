@@ -1,0 +1,109 @@
+.home {
+  min-height: 100vh;
+  padding: 56px 72px;
+  background: var(--color-primary);
+}
+
+.home-hd { margin-bottom: 72px; }
+
+.home-logo {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.home-logo span:first-child { color: var(--color-accent); }
+.home-logo-b { color: var(--color-text); }
+
+.home-tagline {
+  margin-top: 10px;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+.home-section-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: 20px;
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 20px;
+}
+
+.deck-card {
+  background: var(--color-secondary);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 18px;
+  padding: 28px;
+  cursor: pointer;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+.deck-card:hover, .deck-card:focus {
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0,212,255,0.1);
+}
+
+.deck-card-play {
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  background: rgba(0,212,255,0.08);
+  border: 1px solid rgba(0,212,255,0.2);
+  color: var(--color-accent);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.deck-card-body { flex: 1; min-width: 0; }
+
+.deck-card-part {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.deck-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 6px 0 4px;
+  color: var(--color-text);
+}
+
+.deck-card-sub {
+  font-size: 0.88rem;
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+
+.deck-card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.deck-card-count { font-size: 0.8rem; color: var(--color-muted); }
+
+.deck-tags { display: flex; gap: 6px; }
+
+.deck-tag {
+  font-size: 0.7rem;
+  padding: 3px 10px;
+  border-radius: 100px;
+  background: rgba(124,58,237,0.12);
+  border: 1px solid rgba(124,58,237,0.25);
+  color: #a78bfa;
+}

@@ -1,11 +1,12 @@
 :root {
-  --color-primary: #1a1a2e;
-  --color-secondary: #16213e;
-  --color-accent: #e94560;
-
+  --color-primary: #080c14;
+  --color-secondary: #0f1523;
+  --color-accent: #00d4ff;
+  --color-accent2: #7c3aed;
+  --color-warm: #f59e0b;
+  --color-text: #e2e8f0;
+  --color-muted: #64748b;
   --font-base: 'Segoe UI', system-ui, sans-serif;
-  --slide-width: 1280px;
-  --slide-height: 720px;
 }
 
 *, *::before, *::after {
@@ -18,6 +19,6 @@ html, body, #root {
   width: 100%;
   height: 100%;
   background: var(--color-primary);
-  color: #fff;
+  color: var(--color-text);
   font-family: var(--font-base);
 }

@@ -1,0 +1,89 @@
+.viewer {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: var(--color-primary);
+}
+
+/* Bottom navigation */
+.v-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+  z-index: 100;
+}
+.v-nav--on { opacity: 1; transform: translateY(0); pointer-events: auto; }
+
+.v-btn {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s;
+  backdrop-filter: blur(4px);
+}
+.v-btn:hover:not(:disabled) { background: rgba(255,255,255,0.2); }
+.v-btn:disabled { opacity: 0.25; cursor: default; }
+.v-btn--lg { font-size: 1.6rem; width: 48px; height: 48px; }
+
+.v-controls { display: flex; align-items: center; gap: 16px; }
+
+.v-counter {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.8);
+  min-width: 56px;
+  text-align: center;
+  font-weight: 500;
+}
+.v-counter em { font-style: normal; color: rgba(255,255,255,0.3); margin: 0 4px; }
+
+.v-title {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.05em;
+  max-width: 280px;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+/* Slide indicator dots */
+.v-dots {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 100;
+}
+.v-dots--on { opacity: 1; }
+
+.v-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.25);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s, transform 0.2s, width 0.2s;
+}
+.v-dot--active {
+  background: var(--color-accent);
+  width: 18px;
+  border-radius: 3px;
+}
