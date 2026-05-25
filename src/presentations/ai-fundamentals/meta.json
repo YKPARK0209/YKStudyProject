@@ -1,7 +1,27 @@
 {
   "title": "AI 기초 이해",
   "subtitle": "AI의 본질부터 LLM OS 비전까지",
+  "author": "박영근",
+  "createdAt": "2026-05-25",
+  "updatedAt": "2026-05-26",
+  "part": "1부 · 2부 · 3부",
   "count": 8,
   "tags": ["AI", "LLM", "생성형AI"],
-  "part": "1부·2부·3부"
+
+  "design": {
+    "theme": "dark-tech",
+    "background": "#080c14",
+    "surface": "#0f1523",
+    "colorAccent": "#00d4ff",
+    "colorAccent2": "#7c3aed",
+    "colorWarm": "#f59e0b",
+    "colorText": "#e2e8f0",
+    "colorMuted": "#64748b",
+    "fontDisplay": "RixHead",
+    "fontHeading": "YoonGothic",
+    "fontBody": "KoPubWorldDotum",
+    "fontSerif": "KoPubWorldBatang",
+    "fontMono": "KoPubDotum",
+    "notes": "딥 다크 네이비 배경에 시안(#00d4ff) 강조색 위주의 테크 테마. 슬라이드 진입 시 CSS 애니메이션 자동 실행(컴포넌트 리마운트). 주요 레이아웃: split-panel(좌우 분할), 중앙 집중형, SVG 다이어그램. 칩(chip) 컴포넌트로 섹션 구분. 모든 카드는 var(--color-secondary) 배경에 반투명 보더."
+  }
 }

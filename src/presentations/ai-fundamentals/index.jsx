@@ -1,3 +1,4 @@
+import meta from './meta.json'
 import PresentationViewer from '../../components/PresentationViewer'
 import Slide01 from './Slide01'
 import Slide02 from './Slide02'
@@ -11,5 +12,5 @@ import Slide08 from './Slide08'
 const slides = [Slide01, Slide02, Slide03, Slide04, Slide05, Slide06, Slide07, Slide08]
 
 export default function AiFundamentals() {
-  return <PresentationViewer slides={slides} title="AI 기초 이해" />
+  return <PresentationViewer slides={slides} title={meta.title} />
 }
