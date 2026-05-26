@@ -1,6 +1,6 @@
 import './slides.css'
 
-export default function Slide10() {
+export default function Slide09() {
   return (
     <div className="slide n-slide n11">
       <div className="n11-main">
