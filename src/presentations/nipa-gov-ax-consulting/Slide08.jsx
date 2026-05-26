@@ -2,51 +2,66 @@ import './slides.css'
 
 export default function Slide08() {
   return (
-    <div className="slide n-slide n-ki">
+    <div className="slide n-slide n10">
       <div className="n-slide-hd">
-        <span className="n-badge n-badge--teal">03 1차 컨설팅 주요내용</span>
+        <span className="n-badge">04 향후계획</span>
       </div>
 
-      <div className="n-ki-hd">
-        <div className="n-ki-meta">
-          <span className="n-ki-seq">KI-05</span>
-          <span className="n-ki-title">AI 모델·인프라</span>
-          <span className="n-badge">03 AI모델·인프라 영역</span>
+      <p className="n10-sub">
+        범정부 AX 컨설팅 <em>3단계 추진 로드맵</em>
+      </p>
+
+      <div className="n10-flow">
+        <div className="n10-stage">
+          <div className="n10-stage-hd">
+            <span className="n10-phase">Phase 1</span>
+            <span className="n10-date">'26.6월</span>
+          </div>
+          <div className="n10-stage-title">컨설팅 완료 및 의견서 배포</div>
+          <div className="n10-bullets">
+            <div className="n10-bullet">2차 서면 컨설팅 의견서 10개 과제 전체 제공</div>
+            <div className="n10-bullet">1차 컨설팅 종합 결과 보고서 작성·배포</div>
+            <div className="n10-bullet">부처별 컨설팅 이행 계획 수립 지원</div>
+          </div>
+          <div className="n10-note">상반기 컨설팅 마무리</div>
         </div>
-        <p className="n-ki-q">AI 모델 선택과 인프라 구축에서의 주요 인사이트: <em>독파모 기반 온프레미스 전환 필요</em></p>
+
+        <div className="n10-arrow">▶</div>
+
+        <div className="n10-stage">
+          <div className="n10-stage-hd">
+            <span className="n10-phase">Phase 2</span>
+            <span className="n10-date">'26.7~9월</span>
+          </div>
+          <div className="n10-stage-title">추가 컨설팅 및 사업 연계</div>
+          <div className="n10-bullets">
+            <div className="n10-bullet">부처 요구 기반 대면·서면 추가 컨설팅 진행</div>
+            <div className="n10-bullet">컨설팅 결과물 기반 AX 지원사업 연계</div>
+            <div className="n10-bullet">컨설팅 이행 모니터링 및 성과지표 관리</div>
+          </div>
+          <div className="n10-note">컨설팅-사업 연계 본격화</div>
+        </div>
+
+        <div className="n10-arrow">▶</div>
+
+        <div className="n10-stage">
+          <div className="n10-stage-hd">
+            <span className="n10-phase">Phase 3</span>
+            <span className="n10-date">'26.10월~</span>
+          </div>
+          <div className="n10-stage-title">하반기 컨설팅 확대 운영</div>
+          <div className="n10-bullets">
+            <div className="n10-bullet">하반기 컨설팅 대상 과제 선정 (15개 이상)</div>
+            <div className="n10-bullet">상반기 인사이트 기반 컨설팅 방법론 고도화</div>
+            <div className="n10-bullet">범부처 AX 컨설팅 수행 체계 상시 운영화</div>
+          </div>
+          <div className="n10-note">전 부처 대상 확대</div>
+        </div>
       </div>
 
-      <div className="n-ki-grid">
-        <div className="n-ki-cell n-ki-area" style={{ gridRow: 'span 2' }}>
-          <span className="n-ki-area-num">03</span>
-          <span className="n-ki-area-name">AI 모델·인프라</span>
-        </div>
-        <div className="n-ki-cell" style={{ borderBottom: '1px solid rgba(64,128,240,.08)' }}>
-          <span className="n-ki-cell-label">현황 · 문제점</span>
-          <p className="n-ki-cell-text">공공 AI 서비스의 민간 상용 LLM 과의존으로 서비스 지속성·비용·보안 리스크 상존. GPU 인프라 자체 확보 미흡</p>
-        </div>
-        <div className="n-ki-cell" style={{ borderBottom: '1px solid rgba(64,128,240,.08)' }}>
-          <span className="n-ki-cell-label">컨설팅 가이드</span>
-          <p className="n-ki-cell-text">정부 전용 독파모(독자개발 파운데이션 모델) 기반 온프레미스 배포 권고. 업무 특성에 따른 경량화 모델 vs. 대형 모델 선택 기준 제시</p>
-        </div>
-        <div className="n-ki-cell">
-          <span className="n-ki-cell-label">추가 발견사항</span>
-          <p className="n-ki-cell-text">개발·운영환경 분리 미흡으로 AI 모델 버전 관리 및 성능 모니터링 체계 부재. 배포 이후 모델 성능 저하 감지 불가 상황</p>
-        </div>
-        <div className="n-ki-cell">
-          <span className="n-ki-cell-label">개선 방향</span>
-          <p className="n-ki-cell-text">MLOps 파이프라인 구축 로드맵 제시. 모델 성능 KPI 정의 및 A/B 테스트 체계 수립 권고</p>
-        </div>
-      </div>
-
-      <div className="n-ki-case">
-        <span className="n-ki-case-tag">사례 · 건강보험공단</span>
-        <p className="n-ki-case-text">재난적의료비 지원 AI-OCR 시스템 구축 시 대용량 문서 처리를 위한 GPU 인프라 자체 확보 필요성이 컨설팅 과정에서 대두</p>
-      </div>
-
-      <div className="n-ki-msg">
-        <span className="n-ki-msg-label">컨설팅 핵심 메시지</span>
-        <p className="n-ki-msg-text">독파모 기반 경량화 OCR 모델 온프레미스 배포로 개인민감정보 보호와 고성능 문서 처리 동시 달성 가능</p>
+      <div className="n10-conclusion">
+        <strong>목표</strong>: 범정부 AX 컨설팅을 통해 부처별 AI 도입 역량 강화 및
+        NIPA AX 원스톱 지원 체계를 지속적으로 고도화
       </div>
     </div>
   )

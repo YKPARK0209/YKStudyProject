@@ -1,75 +1,52 @@
 import './slides.css'
 
-const STEPS = [
-  {
-    state: 'done',
-    date: '2~3월',
-    num: '1',
-    title: '수요조사',
-    desc: '범부처 대상 AX 컨설팅 수요 접수 (15개 부처, 39건)',
-  },
-  {
-    state: 'done',
-    date: '3.31.',
-    num: '2',
-    title: '과제선정',
-    desc: '상반기 우선 컨설팅 대상 10개 핵심 과제 선정',
-  },
-  {
-    state: 'done',
-    date: '4.16.',
-    num: '3',
-    title: '착수·매칭',
-    desc: '범정부 AX 컨설팅 착수식 개최 및 전담 컨설턴트 매칭',
-  },
-  {
-    state: 'done',
-    date: '4.21.~5.15.',
-    num: '4',
-    title: '1차 컨설팅',
-    desc: '부처 Pain-Point 분석 및 AX 가이드 제시 (대면)',
-  },
-  {
-    state: 'active',
-    date: '5.7.~5.31.',
-    num: '5',
-    title: '2차 컨설팅',
-    desc: '1차 컨설팅 바탕 데이터·인프라·솔루션 등 서면 의견서 제공',
-  },
-  {
-    state: 'upcoming',
-    date: '6~7월',
-    num: '6',
-    title: '추가 컨설팅',
-    desc: '의견서 바탕, 부처 요구 기반 대면/서면 추가 컨설팅 진행',
-  },
-]
-
 export default function Slide05() {
   return (
-    <div className="slide n-slide n05">
+    <div className="slide n-slide n-ki">
       <div className="n-slide-hd">
-        <span className="n-badge">02 추진절차 및 경과</span>
+        <span className="n-badge n-badge--teal">03 1차 컨설팅 주요내용</span>
       </div>
 
-      <div className="n05-tl">
-        {STEPS.map(({ state, date, num, title, desc }) => (
-          <div className={`n05-step n05-step--${state}`} key={num}>
-            <span className="n05-date">{date}</span>
-            <div className="n05-circle">{num}</div>
-            <div className="n05-body">
-              <div className="n05-title">{title}</div>
-              <div className="n05-desc">{desc}</div>
-            </div>
-          </div>
-        ))}
+      <div className="n-ki-hd">
+        <div className="n-ki-meta">
+          <span className="n-ki-seq">KI-04</span>
+          <span className="n-ki-title">데이터 거버넌스</span>
+          <span className="n-badge">02 데이터 영역</span>
+        </div>
+        <p className="n-ki-q">데이터 수집·품질·연계에서의 주요 인사이트: <em>학습 가능한 데이터 확보가 선행 과제</em></p>
       </div>
 
-      <div className="n05-status">
-        <strong>현재 진행 상황:</strong>&ensp;
-        1차 컨설팅 종료 ('26.4.21.~5.15., 10개 부처·기관 현장방문 완료)
-        &ensp;·&ensp;
-        2차 서면 컨설팅 진행 중
+      <div className="n-ki-grid">
+        <div className="n-ki-cell n-ki-area" style={{ gridRow: 'span 2' }}>
+          <span className="n-ki-area-num">02</span>
+          <span className="n-ki-area-name">데이터 거버넌스</span>
+        </div>
+        <div className="n-ki-cell" style={{ borderBottom: '1px solid rgba(64,128,240,.08)' }}>
+          <span className="n-ki-cell-label">현황 · 문제점</span>
+          <p className="n-ki-cell-text">부처 내 데이터가 부서별로 분산·단절되어 있으며, 표준화 미흡으로 AI 학습에 활용 가능한 정제 데이터 확보가 어려운 상황</p>
+        </div>
+        <div className="n-ki-cell" style={{ borderBottom: '1px solid rgba(64,128,240,.08)' }}>
+          <span className="n-ki-cell-label">컨설팅 가이드</span>
+          <p className="n-ki-cell-text">데이터 표준화 가이드 수립 및 부처 공통 데이터 카탈로그 구성. AI 학습용 레이블링 체계 및 품질 검증 프로세스 선행 구축 권고</p>
+        </div>
+        <div className="n-ki-cell">
+          <span className="n-ki-cell-label">추가 발견사항</span>
+          <p className="n-ki-cell-text">개인정보 포함 데이터의 가명처리 절차 미비로 의료·복지 분야 AI 학습 데이터 활용에 법적 제약이 걸림돌로 작용</p>
+        </div>
+        <div className="n-ki-cell">
+          <span className="n-ki-cell-label">개선 방향</span>
+          <p className="n-ki-cell-text">가명정보 활용 절차 표준화 및 데이터 결합 전담 신청 창구 마련. 비식별화 처리 자동화 파이프라인 구축 방안 제시</p>
+        </div>
+      </div>
+
+      <div className="n-ki-case">
+        <span className="n-ki-case-tag">사례 · 산림청</span>
+        <p className="n-ki-case-text">임업 현장 센서·드론·현장조사 데이터의 수집 체계가 미흡하여 스마트 산림경영 AI 학습 데이터 확보에 어려움</p>
+      </div>
+
+      <div className="n-ki-msg">
+        <span className="n-ki-msg-label">컨설팅 핵심 메시지</span>
+        <p className="n-ki-msg-text">산림 IoT 데이터 통합 파이프라인 구축 및 표준 레이블링 체계 선행 수립 후 AI 모델 개발 착수를 권고</p>
       </div>
     </div>
   )

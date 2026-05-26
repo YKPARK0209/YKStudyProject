@@ -10,10 +10,8 @@ import Slide07 from './Slide07'
 import Slide08 from './Slide08'
 import Slide09 from './Slide09'
 import Slide10 from './Slide10'
-import Slide11 from './Slide11'
-import Slide12 from './Slide12'
 
-const slides = [Slide01, Slide02, Slide03, Slide04, Slide05, Slide06, Slide07, Slide08, Slide09, Slide10, Slide11, Slide12]
+const slides = [Slide01, Slide02, Slide03, Slide04, Slide05, Slide06, Slide07, Slide08, Slide09, Slide10]
 
 export default function NipaGovAxConsulting() {
   return <PresentationViewer slides={slides} title={meta.title} />
