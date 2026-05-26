@@ -1,0 +1,27 @@
+{
+  "title": "범정부 AX 1차 컨설팅 결과 보고",
+  "subtitle": "2026. 5. 27. 정보통신산업진흥원 AX원스톱지원센터",
+  "author": "정보통신산업진흥원 (NIPA)",
+  "createdAt": "2026-05-26",
+  "updatedAt": "2026-05-26",
+  "part": "AX 컨설팅 보고",
+  "count": 12,
+  "tags": ["AX", "Consulting", "Gov-IT", "2026"],
+
+  "design": {
+    "theme": "business-blue",
+    "background": "#081426",
+    "surface": "#0c1d38",
+    "colorAccent": "#4080f0",
+    "colorAccent2": "#00c6e8",
+    "colorWarm": "#f0a828",
+    "colorText": "#e8eef8",
+    "colorMuted": "#8898b4",
+    "fontDisplay": "YoonGothic",
+    "fontHeading": "YoonGothic",
+    "fontBody": "KoPubWorldDotum",
+    "fontSerif": "KoPubWorldBatang",
+    "fontMono": "KoPubDotum",
+    "notes": "전문적·신뢰감 있는 정부 보고서 테마(Business-Blue). 딥 네이비 배경 + 브라이트 블루(#4080f0) 강조색. 각 텍스트 블록에 Staggered Fade-in 애니메이션. 레이아웃: Title / Section / 3-tile / icon-grid / Timeline / Key-Insight-Table / Roadmap / End."
+  }
+}
