@@ -1,6 +1,6 @@
 import './slides.css'
 import { useRef, useState, useEffect, useCallback, useMemo } from 'react'
-import { ForceGraph2D } from 'react-force-graph'
+import ForceGraph2D from 'react-force-graph-2d'
 
 const LAYERS = [
   { id: 'gov',      label: '정부 오케스트레이션', color: '#f0a828' },
