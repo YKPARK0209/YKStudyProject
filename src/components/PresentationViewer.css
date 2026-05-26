@@ -87,3 +87,18 @@
   width: 18px;
   border-radius: 3px;
 }
+
+/* ── Mobile ─────────────────────────────────────── */
+@media (max-width: 640px) {
+  .v-nav {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    padding: 12px 16px;
+  }
+  .v-dots { opacity: 1; }
+  .v-title { display: none; }
+  .v-btn { width: 40px; height: 40px; font-size: 1rem; }
+  .v-btn--lg { width: 44px; height: 44px; font-size: 1.4rem; }
+  .v-counter { font-size: 0.9rem; min-width: 44px; }
+}

@@ -110,3 +110,14 @@
   border: 1px solid rgba(124,58,237,0.25);
   color: #a78bfa;
 }
+
+/* ── Mobile ─────────────────────────────────────── */
+@media (max-width: 640px) {
+  .home { padding: 36px 20px 48px; }
+  .home-hd { margin-bottom: 40px; }
+  .home-logo { font-size: 1.5rem; }
+  .home-grid { grid-template-columns: 1fr; }
+  .deck-card { padding: 20px; gap: 14px; }
+  .deck-card-title { font-size: 1.1rem; }
+  .deck-card-play { width: 40px; height: 40px; font-size: 0.9rem; }
+}

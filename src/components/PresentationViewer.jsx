@@ -6,6 +6,8 @@ export default function PresentationViewer({ slides, title }) {
   const [current, setCurrent] = useState(0)
   const [uiVisible, setUiVisible] = useState(false)
   const hideTimer = useRef(null)
+  const touchStartX = useRef(null)
+  const touchStartY = useRef(null)
   const navigate = useNavigate()
 
   const revealUi = useCallback(() => {
@@ -31,10 +33,29 @@ export default function PresentationViewer({ slides, title }) {
 
   useEffect(() => () => clearTimeout(hideTimer.current), [])
 
+  const handleTouchStart = useCallback((e) => {
+    touchStartX.current = e.touches[0].clientX
+    touchStartY.current = e.touches[0].clientY
+  }, [])
+
+  const handleTouchEnd = useCallback((e) => {
+    if (touchStartX.current === null) return
+    const dx = e.changedTouches[0].clientX - touchStartX.current
+    const dy = e.changedTouches[0].clientY - touchStartY.current
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+      if (dx < 0) setCurrent(c => Math.min(c + 1, slides.length - 1))
+      else setCurrent(c => Math.max(c - 1, 0))
+    } else {
+      revealUi()
+    }
+    touchStartX.current = null
+    touchStartY.current = null
+  }, [slides.length, revealUi])
+
   const Slide = slides[current]
 
   return (
-    <div className="viewer" onMouseMove={revealUi}>
+    <div className="viewer" onMouseMove={revealUi} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
       <Slide />
 
       <nav className={`v-nav${uiVisible ? ' v-nav--on' : ''}`}>

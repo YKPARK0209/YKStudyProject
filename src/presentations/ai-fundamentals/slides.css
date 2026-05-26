@@ -614,3 +614,54 @@
   flex: 0 0 auto;
 }
 .s08-conclusion strong { color: var(--color-accent); }
+
+/* ── Mobile ─────────────────────────────────────── */
+@media (max-width: 640px) {
+  /* Base */
+  .slide {
+    padding: 36px 20px 76px;
+    overflow-y: auto;
+  }
+  .slide-h1 { font-size: 1.65rem; }
+  .slide-desc { font-size: 0.88rem; margin-bottom: 20px; }
+
+  /* S01: 강사 소개 — 좌우 → 위아래 */
+  .s01 { flex-direction: column; gap: 24px; }
+  .s01-left { flex: none; }
+  .s01-divider { display: none; }
+  .s01-name { font-size: 2.2rem; }
+
+  /* S02: 생태계 다이어그램 — 비율 축소 */
+  .s02-eco { zoom: 0.6; }
+
+  /* S03: SW vs AI 패널 — 위아래 적층 */
+  .s03 { flex-direction: column; overflow-y: auto; }
+  .s03-panel { padding: 36px 20px; }
+  .s03-panel--sw { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .s03-heading { font-size: 1.5rem; }
+  .s03-graph { max-width: 100%; }
+
+  /* S04: 트랜스포머 카드 — 3열 → 1열 */
+  .s04-cards { grid-template-columns: 1fr; }
+
+  /* S05: GPU/학습방식 — 2열 → 1열 */
+  .s05-compare { grid-template-columns: 1fr; }
+  .s05-learning { grid-template-columns: 1fr; }
+
+  /* S06: 패러다임 — 2열 → 1열, 화살표 수직 */
+  .s06-shift { flex-direction: column; gap: 8px; align-items: stretch; }
+  .s06-shift-arrow { transform: rotate(90deg); align-self: center; }
+  .s06-compare { grid-template-columns: 1fr; }
+
+  /* S07: 하네스 엔지니어링 — 좌우 → 위아래 */
+  .s07 { flex-direction: column; gap: 24px; align-items: center; }
+  .s07-left { flex: none; width: 100%; align-items: center; }
+  .s07-diagram { zoom: 0.78; }
+  .s07-right { width: 100%; }
+
+  /* S08: LLM OS 비교표 — 2열 → 1열 */
+  .s08-compare { grid-template-columns: 1fr; }
+  .s08-col--ai { border-left: none; border-top: 1px solid rgba(0,212,255,0.08); }
+  .s08-col-hd { padding: 14px 20px; }
+  .s08-row { padding: 12px 20px; }
+}
