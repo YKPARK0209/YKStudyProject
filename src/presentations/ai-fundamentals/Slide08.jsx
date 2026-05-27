@@ -1,68 +1,104 @@
 import './slides.css'
 
-const PC_ROWS = [
-  { icon: '⚙️', name: 'CPU',       desc: '논리 연산 · 명령 처리 장치',        delay: '0.2s' },
-  { icon: '💾', name: 'RAM',       desc: '현재 작업 중인 데이터 (단기 기억)',   delay: '0.4s' },
-  { icon: '🗄️', name: '하드디스크', desc: '모든 파일 · 프로그램 저장 (장기 기억)', delay: '0.6s' },
-  { icon: '🖱️', name: '주변기기',   desc: '키보드·마우스·프린터 (입출력 도구)', delay: '0.8s' },
+// SVG center (170,170), spokes to: top(170,55) right(285,170) bottom(170,285) left(55,170)
+const SPOKES = [
+  { x2: 170, y2: 55 },
+  { x2: 285, y2: 170 },
+  { x2: 170, y2: 285 },
+  { x2: 55,  y2: 170 },
 ]
 
-const AI_ROWS = [
-  { icon: '🧠', name: 'LLM',             desc: '언어 이해 · 추론 · 생성 엔진',      delay: '0.3s' },
-  { icon: '📋', name: '컨텍스트 윈도우',   desc: '현재 대화 · 문서 (단기 기억)',       delay: '0.5s' },
-  { icon: '📚', name: 'RAG · 사내 DB',    desc: '외부 지식 검색 · 벡터 저장소 (장기 기억)', delay: '0.7s' },
-  { icon: '🔌', name: 'MCP · 외부 도구',  desc: 'API·계산기·브라우저·로컬 파일 (확장)', delay: '0.9s' },
+const TOOLS = [
+  { cls: 's07-node-top',    icon: '📁', label: '로컬 폴더' },
+  { cls: 's07-node-right',  icon: '🐙', label: 'GitHub API' },
+  { cls: 's07-node-bottom', icon: '🗄️', label: '사내 DB' },
+  { cls: 's07-node-left',   icon: '🌐', label: '외부 도구' },
+]
+
+const STEPS = [
+  { text: '연구자 지시',    sub: '"A프로젝트 데이터 분석해 줘"' },
+  { text: '도구 선택',      sub: 'Python 실행기 / GitHub API 등 자율 선택' },
+  { text: '코드 작성 · 실행', sub: '스스로 코드 생성 후 즉시 실행' },
+  { text: '에러 자가 디버깅', sub: '실패 시 원인 파악 → 재시도' },
+  { text: '결과 리포트 출력', sub: '분석 결과를 구조화된 문서로 정리' },
 ]
 
 export default function Slide08() {
   return (
-    <div className="slide s08">
-      <div>
-        <div className="chip chip--warm">3부 · LLM OS</div>
-        <h1 className="slide-h1">AI는 도구가 아니라 <em>운영체제</em>다</h1>
-        <p className="slide-desc">— 안드레이 카파시(Andrej Karpathy)의 비전</p>
-      </div>
-
-      <div className="s08-compare">
-        {/* 일반 컴퓨터 */}
-        <div className="s08-col s08-col--pc">
-          <div className="s08-col-hd">
-            🖥️ 일반 컴퓨터 아키텍처
-          </div>
-          <div className="s08-rows">
-            {PC_ROWS.map((r, i) => (
-              <div key={i} className="s08-row" style={{ animationDelay: r.delay }}>
-                <div className="s08-row-icon">{r.icon}</div>
-                <div className="s08-row-content">
-                  <div className="s08-row-name">{r.name}</div>
-                  <div className="s08-row-desc">{r.desc}</div>
-                </div>
-              </div>
-            ))}
-          </div>
+    <div className="slide s07">
+      {/* 왼쪽: LLM 연결망 다이어그램 */}
+      <div className="s07-left">
+        <div style={{ marginBottom: 16 }}>
+          <div className="chip chip--purple">3부 · 핵심 차별화</div>
+          <h2 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--color-text)', lineHeight: 1.2 }}>
+            하네스 엔지니어링
+          </h2>
+          <p style={{ fontSize: '0.83rem', color: 'var(--color-muted)', marginTop: 6 }}>
+            AI 두뇌에 손과 발을 달아주는 디지털 연결망
+          </p>
         </div>
 
-        {/* LLM OS */}
-        <div className="s08-col s08-col--ai">
-          <div className="s08-col-hd">
-            🤖 LLM OS 아키텍처
-          </div>
-          <div className="s08-rows">
-            {AI_ROWS.map((r, i) => (
-              <div key={i} className="s08-row" style={{ animationDelay: r.delay }}>
-                <div className="s08-row-icon">{r.icon}</div>
-                <div className="s08-row-content">
-                  <div className="s08-row-name">{r.name}</div>
-                  <div className="s08-row-desc">{r.desc}</div>
-                </div>
-              </div>
+        <div className="s07-diagram">
+          <svg className="s07-svg" viewBox="0 0 340 340">
+            {SPOKES.map((s, i) => (
+              <line
+                key={i}
+                className="s07-spoke"
+                x1="170" y1="170"
+                x2={s.x2} y2={s.y2}
+                style={{ animationDelay: `${0.3 + i * 0.2}s` }}
+              />
             ))}
+          </svg>
+
+          <div className="s07-center">
+            <span className="s07-center-icon">🧠</span>
+            <span className="s07-center-label">LLM</span>
           </div>
+
+          {TOOLS.map((t, i) => (
+            <div
+              key={i}
+              className={`s07-node ${t.cls}`}
+              style={{ animationDelay: `${0.5 + i * 0.2}s` }}
+            >
+              <span className="s07-node-icon">{t.icon}</span>
+              {t.label}
+            </div>
+          ))}
         </div>
       </div>
 
-      <div className="s08-conclusion">
-        여러분의 연구실 전체를 <strong>AI라는 운영체제로 통제</strong>하는 시대가 이미 시작됐다.
+      {/* 오른쪽: 에이전트 루프 */}
+      <div className="s07-right">
+        <p className="s07-loop-title">Autonomous Agent Loop</p>
+        <div className="s07-steps">
+          {STEPS.map((s, i) => (
+            <div
+              key={i}
+              className="s07-step"
+              style={{ animationDelay: `${0.4 + i * 0.15}s` }}
+            >
+              <span className="s07-step-n">{i + 1}</span>
+              <div className="s07-step-body">
+                <div className="s07-step-text">{s.text}</div>
+                <div className="s07-step-sub">{s.sub}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div style={{
+          marginTop: 20, padding: '12px 18px',
+          background: 'rgba(124,58,237,0.07)',
+          border: '1px solid rgba(124,58,237,0.2)',
+          borderRadius: 12,
+          fontSize: '0.83rem', color: 'var(--color-muted)', lineHeight: 1.6,
+          opacity: 0, animation: 'fadeInUp 0.5s 1.5s ease forwards',
+        }}>
+          <strong style={{color:'#a78bfa'}}>MCP(Model Context Protocol)</strong> — 표준화된 하네스 연결 규약.<br />
+          로컬 폴더, DB, API를 플러그인처럼 LLM에 연결한다.
+        </div>
       </div>
     </div>
   )

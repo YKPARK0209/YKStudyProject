@@ -1,68 +1,76 @@
 import './slides.css'
 
-const OLD_STEPS = [
-  { n: '1', text: '질문 입력' },
-  { n: '2', text: '즉시 답변 출력' },
-]
-
-const NEW_STEPS = [
-  { n: '1', text: '질문 수신' },
-  { n: '2', text: '내부 추론 시작', sub: '"이 접근법이 맞나? 다른 방법은?"' },
-  { n: '3', text: '논리 검증 · 재사고', sub: '"아니다, 처음부터 다시 생각하자"' },
-  { n: '4', text: '최종 검토 후 출력' },
-]
+const GPU_COUNT = 32
 
 export default function Slide06() {
   return (
-    <div className="slide s06">
+    <div className="slide s05">
       <div>
-        <div className="chip">3부 · 트렌드</div>
-        <h1 className="slide-h1">패러다임의 전환: <em>학습 → 추론</em></h1>
+        <div className="chip">2부 · 인프라</div>
+        <h1 className="slide-h1">왜 AI는 <em>GPU</em>를 갈구하는가?</h1>
       </div>
 
-      {/* 트렌드 방향 */}
-      <div className="s06-shift">
-        <div className="s06-shift-item s06-shift-item--old">⚙️ Training 시대<br/><small style={{fontWeight:400,fontSize:'0.78rem'}}>파라미터 크기 경쟁</small></div>
-        <span className="s06-shift-arrow">→</span>
-        <div className="s06-shift-item s06-shift-item--new">💡 Inference 시대<br/><small style={{fontWeight:400,fontSize:'0.78rem'}}>Test-time Compute</small></div>
-      </div>
-
-      {/* 일반 모델 vs 추론 모델 비교 */}
-      <div className="s06-compare">
-        <div className="s06-model s06-model--old">
-          <div className="s06-model-badge">일반 모델 (구세대)</div>
-          <div className="s06-model-title">🏧 자판기형 — 질문하면 즉시 답변</div>
-          <div className="s06-steps">
-            {OLD_STEPS.map((s, i) => (
-              <div key={i} className="s06-step s06-step--old">
-                <span className="s06-step-n">{s.n}</span>
-                {s.text}
-              </div>
+      {/* CPU vs GPU 비교 */}
+      <div className="s05-compare">
+        <div className="s05-box s05-box--cpu">
+          <div className="s05-box-hd">
+            <span className="s05-box-icon">🏎️</span>
+            <div>
+              <div className="s05-box-name">CPU</div>
+              <div className="s05-box-title">페라리 4대 — 직렬 처리</div>
+            </div>
+          </div>
+          <div className="s05-units">
+            {[0,1,2,3].map(i => (
+              <div key={i} className="s05-unit s05-unit--cpu" style={{ animationDelay: `${0.1 + i * 0.1}s` }}>🏎️</div>
             ))}
           </div>
-          <p style={{ fontSize: '0.83rem', color: 'var(--color-muted)', marginTop: 'auto', lineHeight: 1.6 }}>
-            빠르지만 복잡한 논리 문제에선 오류 발생.<br />
-            파라미터 크기와 사전학습 데이터양이 성능 결정.
+          <p className="s05-box-desc">
+            코어 4~64개, 각각 매우 빠름.<br />
+            하나씩 순서대로 처리 — 복잡한 논리에 탁월하지만 AI의 방대한 행렬 연산엔 부족하다.
           </p>
         </div>
 
-        <div className="s06-model s06-model--new">
-          <div className="s06-model-badge">추론 모델 (o1, o3, R1…)</div>
-          <div className="s06-model-title">
-            <span className="s06-loop-icon">🔄</span>
-            사유형 — 생각하고 또 생각한다
+        <div className="s05-box s05-box--gpu">
+          <div className="s05-box-hd">
+            <span className="s05-box-icon">🚌</span>
+            <div>
+              <div className="s05-box-name">GPU</div>
+              <div className="s05-box-title">버스 수천 대 — 병렬 처리</div>
+            </div>
           </div>
-          <div className="s06-steps">
-            {NEW_STEPS.map((s, i) => (
-              <div key={i} className="s06-step s06-step--new" style={{ animationDelay: `${0.3 + i * 0.15}s` }}>
-                <span className="s06-step-n">{s.n}</span>
-                <div>
-                  <div>{s.text}</div>
-                  {s.sub && <div style={{ fontSize: '0.76rem', color: 'var(--color-accent)', marginTop: 2, fontStyle: 'italic' }}>{s.sub}</div>}
-                </div>
-              </div>
+          <div className="s05-units">
+            {Array.from({ length: GPU_COUNT }).map((_, i) => (
+              <div key={i} className="s05-unit s05-unit--gpu" style={{ animationDelay: `${0.05 * i}s` }} />
             ))}
           </div>
+          <p className="s05-box-desc">
+            코어 수천~수만 개, 속도는 느리지만 동시에 병렬 처리.<br />
+            트랜스포머의 거대한 행렬 곱셈을 한꺼번에 처리 — AI의 필수 인프라.
+          </p>
+        </div>
+      </div>
+
+      {/* 학습 방법 비교 */}
+      <div className="s05-learning">
+        <div className="s05-method s05-method--scratch" style={{ animationDelay: '0.3s' }}>
+          <div className="s05-method-badge">From Scratch</div>
+          <div className="s05-method-title">프롬 스크래치 (사전 학습)</div>
+          <p className="s05-method-desc">
+            백지 상태의 아기 뇌에 위키백과·책·인터넷 전체를 넣어
+            대학생으로 키우는 과정.<br />
+            <strong style={{color:'var(--color-warm)'}}>초거대 GPU 클러스터가 수개월 필요 → 수백억 원 비용.</strong>
+          </p>
+        </div>
+
+        <div className="s05-method s05-method--ft" style={{ animationDelay: '0.5s' }}>
+          <div className="s05-method-badge">Fine-Tuning</div>
+          <div className="s05-method-title">파인튜닝 (미세 조정)</div>
+          <p className="s05-method-desc">
+            이미 똑똑한 대학생(사전 학습 모델)에게 우리 연구소의
+            특수 보안 문서를 전공 교재처럼 읽혀 전문 연구원으로 만드는 과정.<br />
+            <strong style={{color:'#34d399'}}>상대적으로 적은 데이터·비용으로 도메인 특화 가능.</strong>
+          </p>
         </div>
       </div>
     </div>

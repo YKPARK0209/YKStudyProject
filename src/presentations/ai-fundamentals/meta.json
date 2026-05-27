@@ -1,12 +1,12 @@
 {
-  "title": "AI 기초 이해",
-  "subtitle": "AI의 본질부터 LLM OS 비전까지",
+  "title": "생성형 AI 기초 및 활용",
+  "subtitle": "AI의 기초부터 잘쓰는법까지",
   "author": "박영근",
   "createdAt": "2026-05-25",
   "updatedAt": "2026-05-26",
-  "part": "1부 · 2부 · 3부",
-  "count": 8,
-  "tags": ["AI", "LLM", "생성형AI"],
+  "part": "생성형AI 아는척 하기",
+  "count": 9,
+  "tags": ["AI기초", "생성형AI", "AI활용"],
 
   "design": {
     "theme": "dark-tech",

@@ -1,77 +1,80 @@
 import './slides.css'
 
-const GPU_COUNT = 32
+const WORDS = [
+  { text: '오늘', level: 'dim' },
+  { text: '회의에서', level: 'dim' },
+  { text: '논의한', level: 'medium' },
+  { text: 'AI', level: 'focus' },
+  { text: '전략을', level: 'focus' },
+  { text: '정리해', level: 'medium' },
+  { text: '줘', level: 'dim' },
+]
+
+const CARDS = [
+  {
+    icon: '🧱',
+    name: 'Token',
+    title: '토큰',
+    desc: '문장을 쪼개는 레고 블록. AI는 글자가 아닌 토큰 단위로 언어를 처리한다.',
+    example: '"대한민국" → "대한" + "민국"',
+    delay: '0.3s',
+  },
+  {
+    icon: '🧠',
+    name: 'Parameter',
+    title: '파라미터',
+    desc: '뇌의 시냅스. 수천억 개의 가중치가 서로 얽혀 복잡한 추론을 가능하게 한다.',
+    example: 'GPT-4: ~1.8조 개 추정\nClaude 3: 비공개',
+    delay: '0.5s',
+  },
+  {
+    icon: '🗂️',
+    name: 'Context Window',
+    title: '컨텍스트 윈도우',
+    desc: 'AI가 한 번에 볼 수 있는 책상 넓이. 넓을수록 더 많은 문서를 동시에 참조한다.',
+    example: 'GPT-3.5: 4K 토큰\nGemini 1.5: 1M 토큰',
+    delay: '0.7s',
+  },
+]
 
 export default function Slide05() {
   return (
-    <div className="slide s05">
+    <div className="slide s04">
       <div>
-        <div className="chip">2부 · 인프라</div>
-        <h1 className="slide-h1">왜 AI는 <em>GPU</em>를 갈구하는가?</h1>
+        <div className="chip">2부 · 생성형 AI</div>
+        <h1 className="slide-h1">생성형 AI와 <em>트랜스포머</em></h1>
       </div>
 
-      {/* CPU vs GPU 비교 */}
-      <div className="s05-compare">
-        <div className="s05-box s05-box--cpu">
-          <div className="s05-box-hd">
-            <span className="s05-box-icon">🏎️</span>
-            <div>
-              <div className="s05-box-name">CPU</div>
-              <div className="s05-box-title">페라리 4대 — 직렬 처리</div>
-            </div>
-          </div>
-          <div className="s05-units">
-            {[0,1,2,3].map(i => (
-              <div key={i} className="s05-unit s05-unit--cpu" style={{ animationDelay: `${0.1 + i * 0.1}s` }}>🏎️</div>
-            ))}
-          </div>
-          <p className="s05-box-desc">
-            코어 4~64개, 각각 매우 빠름.<br />
-            하나씩 순서대로 처리 — 복잡한 논리에 탁월하지만 AI의 방대한 행렬 연산엔 부족하다.
-          </p>
+      {/* 어텐션 메커니즘 시각화 */}
+      <div className="s04-orchestra">
+        <div className="s04-words">
+          {WORDS.map((w, i) => (
+            <span
+              key={i}
+              className={`s04-word s04-word--${w.level}`}
+              style={{ animationDelay: `${0.1 + i * 0.08}s` }}
+            >
+              {w.text}
+            </span>
+          ))}
         </div>
-
-        <div className="s05-box s05-box--gpu">
-          <div className="s05-box-hd">
-            <span className="s05-box-icon">🚌</span>
-            <div>
-              <div className="s05-box-name">GPU</div>
-              <div className="s05-box-title">버스 수천 대 — 병렬 처리</div>
-            </div>
-          </div>
-          <div className="s05-units">
-            {Array.from({ length: GPU_COUNT }).map((_, i) => (
-              <div key={i} className="s05-unit s05-unit--gpu" style={{ animationDelay: `${0.05 * i}s` }} />
-            ))}
-          </div>
-          <p className="s05-box-desc">
-            코어 수천~수만 개, 속도는 느리지만 동시에 병렬 처리.<br />
-            트랜스포머의 거대한 행렬 곱셈을 한꺼번에 처리 — AI의 필수 인프라.
-          </p>
-        </div>
+        <p className="s04-att-note">
+          <strong>어텐션(Attention)</strong> — 지금 이 문장에서 가장 중요한 단어에 집중하는 메커니즘.
+          오케스트라 지휘자처럼 어떤 악기(단어)를 강조할지 실시간으로 조율한다.
+        </p>
       </div>
 
-      {/* 학습 방법 비교 */}
-      <div className="s05-learning">
-        <div className="s05-method s05-method--scratch" style={{ animationDelay: '0.3s' }}>
-          <div className="s05-method-badge">From Scratch</div>
-          <div className="s05-method-title">프롬 스크래치 (사전 학습)</div>
-          <p className="s05-method-desc">
-            백지 상태의 아기 뇌에 위키백과·책·인터넷 전체를 넣어
-            대학생으로 키우는 과정.<br />
-            <strong style={{color:'var(--color-warm)'}}>초거대 GPU 클러스터가 수개월 필요 → 수백억 원 비용.</strong>
-          </p>
-        </div>
-
-        <div className="s05-method s05-method--ft" style={{ animationDelay: '0.5s' }}>
-          <div className="s05-method-badge">Fine-Tuning</div>
-          <div className="s05-method-title">파인튜닝 (미세 조정)</div>
-          <p className="s05-method-desc">
-            이미 똑똑한 대학생(사전 학습 모델)에게 우리 연구소의
-            특수 보안 문서를 전공 교재처럼 읽혀 전문 연구원으로 만드는 과정.<br />
-            <strong style={{color:'#34d399'}}>상대적으로 적은 데이터·비용으로 도메인 특화 가능.</strong>
-          </p>
-        </div>
+      {/* 3대 핵심 용어 */}
+      <div className="s04-cards">
+        {CARDS.map((c, i) => (
+          <div key={i} className="s04-card" style={{ animationDelay: c.delay }}>
+            <div className="s04-card-icon">{c.icon}</div>
+            <div className="s04-card-name">{c.name}</div>
+            <div className="s04-card-title">{c.title}</div>
+            <p className="s04-card-desc">{c.desc}</p>
+            <pre className="s04-card-ex">{c.example}</pre>
+          </div>
+        ))}
       </div>
     </div>
   )

@@ -8,8 +8,9 @@ import Slide05 from './Slide05'
 import Slide06 from './Slide06'
 import Slide07 from './Slide07'
 import Slide08 from './Slide08'
+import Slide09 from './Slide09'
 
-const slides = [Slide01, Slide02, Slide03, Slide04, Slide05, Slide06, Slide07, Slide08]
+const slides = [Slide01, Slide02, Slide03, Slide04, Slide05, Slide06, Slide07, Slide08, Slide09]
 
 export default function AiFundamentals() {
   return <PresentationViewer slides={slides} title={meta.title} />

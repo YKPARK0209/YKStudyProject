@@ -1,81 +1,85 @@
 import './slides.css'
 
-const WORDS = [
-  { text: '오늘', level: 'dim' },
-  { text: '회의에서', level: 'dim' },
-  { text: '논의한', level: 'medium' },
-  { text: 'AI', level: 'focus' },
-  { text: '전략을', level: 'focus' },
-  { text: '정리해', level: 'medium' },
-  { text: '줘', level: 'dim' },
-]
-
-const CARDS = [
-  {
-    icon: '🧱',
-    name: 'Token',
-    title: '토큰',
-    desc: '문장을 쪼개는 레고 블록. AI는 글자가 아닌 토큰 단위로 언어를 처리한다.',
-    example: '"대한민국" → "대한" + "민국"',
-    delay: '0.3s',
-  },
-  {
-    icon: '🧠',
-    name: 'Parameter',
-    title: '파라미터',
-    desc: '뇌의 시냅스. 수천억 개의 가중치가 서로 얽혀 복잡한 추론을 가능하게 한다.',
-    example: 'GPT-4: ~1.8조 개 추정\nClaude 3: 비공개',
-    delay: '0.5s',
-  },
-  {
-    icon: '🗂️',
-    name: 'Context Window',
-    title: '컨텍스트 윈도우',
-    desc: 'AI가 한 번에 볼 수 있는 책상 넓이. 넓을수록 더 많은 문서를 동시에 참조한다.',
-    example: 'GPT-3.5: 4K 토큰\nGemini 1.5: 1M 토큰',
-    delay: '0.7s',
-  },
-]
-
 export default function Slide04() {
   return (
-    <div className="slide s04">
-      <div>
-        <div className="chip">2부 · 생성형 AI</div>
-        <h1 className="slide-h1">생성형 AI와 <em>트랜스포머</em></h1>
+    <div className="slide s03">
+
+      {/* ── SW 패널 ── */}
+      <div className="s03-panel s03-panel--sw">
+        <div className="s03-type s03-type--sw">Software</div>
+        <h2 className="s03-heading">규칙을 <em style={{color:'#a78bfa',fontStyle:'normal'}}>주는</em> 것</h2>
+        <p className="s03-tagline">개발자가 규칙을 직접 코드로 작성한다</p>
+
+        <div className="s03-flow">
+          <div className="s03-box">x = 5</div>
+          <span className="s03-arrow">→</span>
+          <div className="s03-rule-box">
+            <div className="s03-rule-name">Program</div>
+            <div className="s03-rule-content">y = x + 1</div>
+          </div>
+          <span className="s03-arrow">→</span>
+          <div className="s03-box">y = 6</div>
+        </div>
+
+        <div className="s03-sw-note">
+          입력(x)이 무엇이든 규칙(+1)은 변하지 않는다.<br />
+          프로그램은 <strong style={{color:'#a78bfa'}}>닫힌 구조</strong>다 — 규칙은 사람이 넣어준다.
+        </div>
       </div>
 
-      {/* 어텐션 메커니즘 시각화 */}
-      <div className="s04-orchestra">
-        <div className="s04-words">
-          {WORDS.map((w, i) => (
-            <span
-              key={i}
-              className={`s04-word s04-word--${w.level}`}
-              style={{ animationDelay: `${0.1 + i * 0.08}s` }}
-            >
-              {w.text}
-            </span>
+      {/* ── AI 패널 ── */}
+      <div className="s03-panel s03-panel--ai">
+        <div className="s03-type s03-type--ai">AI</div>
+        <h2 className="s03-heading">규칙을 <em style={{color:'var(--color-accent)',fontStyle:'normal'}}>찾는</em> 것</h2>
+        <p className="s03-tagline">데이터로부터 스스로 규칙(함수)을 추정한다</p>
+
+        {/* 학습 */}
+        <div className="s03-phase">① 학습 (Training)</div>
+        <svg className="s03-graph" viewBox="0 0 340 156">
+          {/* 축 */}
+          <line x1="30" y1="10" x2="30" y2="136" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5"/>
+          <line x1="24" y1="130" x2="320" y2="130" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5"/>
+          <text x="315" y="143" fill="rgba(255,255,255,0.35)" fontSize="11">x</text>
+          <text x="18"  y="14"  fill="rgba(255,255,255,0.35)" fontSize="11">y</text>
+          {/* 눈금 */}
+          {[1,2,3].map((v,i) => (
+            <text key={i} x={78+i*70} y="143" fill="rgba(255,255,255,0.3)" fontSize="10" textAnchor="middle">{v}</text>
           ))}
+          {[2,3,4].map((v,i) => (
+            <text key={i} x="20" y={120-i*40} fill="rgba(255,255,255,0.3)" fontSize="10" textAnchor="middle">{v}</text>
+          ))}
+
+          {/* 회귀선 y = x+1 */}
+          <line
+            className="s03-line"
+            x1="30" y1="150" x2="280" y2="0"
+            stroke="var(--color-warm)" strokeWidth="2.5" strokeLinecap="round"
+            style={{ animationDelay: '2s' }}
+          />
+          <text
+            className="s03-label"
+            x="255" y="14" fill="var(--color-warm)" fontSize="11" fontWeight="bold"
+            style={{ animationDelay: '3s' }}
+          >y=x+1</text>
+
+          {/* 데이터 포인트 (1,2) (2,3) (3,4) */}
+          <circle className="s03-dot" cx="80"  cy="110" r="5" fill="var(--color-accent)" style={{ animationDelay: '0.5s' }} />
+          <circle className="s03-dot" cx="150" cy="70"  r="5" fill="var(--color-accent)" style={{ animationDelay: '1.0s' }} />
+          <circle className="s03-dot" cx="220" cy="30"  r="5" fill="var(--color-accent)" style={{ animationDelay: '1.5s' }} />
+        </svg>
+
+        {/* 추론 */}
+        <div className="s03-phase" style={{ marginTop: 20 }}>② 추론 (Inference)</div>
+        <div className="s03-inference">
+          <div className="s03-inf s03-inf--in">x = 10</div>
+          <span className="s03-inf-arrow">→</span>
+          <div className="s03-inf s03-inf--out">y = 11</div>
         </div>
-        <p className="s04-att-note">
-          <strong>어텐션(Attention)</strong> — 지금 이 문장에서 가장 중요한 단어에 집중하는 메커니즘.
-          오케스트라 지휘자처럼 어떤 악기(단어)를 강조할지 실시간으로 조율한다.
+        <p className="s03-result-note">
+          한 번도 본 적 없는 x=10을 넣어도 학습된 규칙으로 답을 도출한다.
         </p>
       </div>
 
-      {/* 3대 핵심 용어 */}
-      <div className="s04-cards">
-        {CARDS.map((c, i) => (
-          <div key={i} className="s04-card" style={{ animationDelay: c.delay }}>
-            <div className="s04-card-icon">{c.icon}</div>
-            <div className="s04-card-name">{c.name}</div>
-            <div className="s04-card-title">{c.title}</div>
-            <p className="s04-card-desc">{c.desc}</p>
-            <pre className="s04-card-ex">{c.example}</pre>
-          </div>
-        ))}
-      </div>
     </div>
   )
 }
